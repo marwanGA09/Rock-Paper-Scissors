@@ -1,7 +1,9 @@
 ```
 # Rock Paper Scissors Game
 
-This is a simple implementation of the classic Rock Paper Scissors game using JavaScript. The game allows two players to compete against each other by choosing one of the three options: rock, paper, or scissors. The winner is determined based on the rules of the game: rock beats scissors, scissors beats paper, and paper beats rock.
+This is a simple implementation of the classic Rock Paper Scissors game using JavaScript.
+The game allows two players to compete against each other by choosing one of the three options: rock, paper, or scissors.
+The winner is determined based on the rules of the game: rock beats scissors, scissors beats paper, and paper beats rock.
 
 ## Installation
 
