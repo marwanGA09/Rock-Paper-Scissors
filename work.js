@@ -12,12 +12,16 @@ function playGame(computerSelection, playerSelection) {
       winOrLose = "You lose";
     } else if (computerSelection === "paper") {
       winOrLose = "You win";
+    } else {
+      winOrLose = "draw";
     }
   } else if (playerSelection === "paper") {
     if (computerSelection === "rock") {
       winOrLose = "You win";
     } else if (computerSelection === "scissors") {
       winOrLose = "you lose";
+    } else {
+      winOrLose = "draw";
     }
   } else if (playerSelection === "rock") {
     if (computerSelection === "paper") {
@@ -28,6 +32,7 @@ function playGame(computerSelection, playerSelection) {
       winOrLose = "draw";
     }
   }
+
   return winOrLose;
 }
 
