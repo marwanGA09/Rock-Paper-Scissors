@@ -1,4 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+html {
+  font-size: 10px;
+}
+
+.main-container {
+  background-image: url("./img/wp8122162.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 95vh;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.play-board {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.player-one,
+.player-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.player-one {
+}
+
+.player-one-choice {
+}
+
+.winner-display,
+.play-btn {
+  /* border: 0.2rem solid rgb(197, 52, 12); */
+  width: 16rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+
+  color: rgb(0, 2, 142);
+  background-color: antiquewhite;
+  text-align: center;
+}
+
+.player-two-choice {
+}
+
+.player-two {
+}
+
+footer {
+  height: 4vh;
+  background-color: azure;
+  font-size: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
-  color: brown;
-  font-size: 22px;
+  color: rgb(0, 2, 142);
+  font-size: 2.2rem;
+  background-color: antiquewhite;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  background-color: antiquewhite;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+img {
+  width: 100px;
+  height: 150px;
+  border-radius: 4rem;
+}
+
+/* js manipulate */
+
+.hidden {
+  display: none;
 }
