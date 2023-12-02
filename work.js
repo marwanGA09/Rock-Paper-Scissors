@@ -1,3 +1,6 @@
+// Author Adem Kedir;
+// Nov 25 2023
+
 console.log("js is connected to index html");
 
 const gameValue = ["rock", "paper", "scissors"];
@@ -7,6 +10,7 @@ const gameValue = ["rock", "paper", "scissors"];
 // function to check who win the game
 function playGame(computerSelection, playerSelection) {
   let winOrLose;
+
   if (playerSelection === "scissors") {
     if (computerSelection === "rock") {
       winOrLose = "You lose";
@@ -65,3 +69,4 @@ function game() {
 
 // calling a game to start
 game();
+gi;
