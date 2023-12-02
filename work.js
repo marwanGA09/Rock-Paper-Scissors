@@ -69,4 +69,3 @@ function game() {
 
 // calling a game to start
 game();
-gi;
