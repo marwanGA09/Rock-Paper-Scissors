@@ -3,6 +3,39 @@
 
 const gameValue = ["rock", "paper", "scissors"];
 
+// function to check who win the game
+function playGame(computerSelection, playerSelection) {
+  let winOrLose;
+
+  if (playerSelection === "scissors") {
+    if (computerSelection === "rock") {
+      winOrLose = "You lose";
+    } else if (computerSelection === "paper") {
+      winOrLose = "You win";
+    } else {
+      winOrLose = "draw";
+    }
+  } else if (playerSelection === "paper") {
+    if (computerSelection === "rock") {
+      winOrLose = "You win";
+    } else if (computerSelection === "scissors") {
+      winOrLose = "you lose";
+    } else {
+      winOrLose = "draw";
+    }
+  } else if (playerSelection === "rock") {
+    if (computerSelection === "paper") {
+      winOrLose = "you lose";
+    } else if (computerSelection === "scissors") {
+      winOrLose = "you win";
+    } else {
+      winOrLose = "draw";
+    }
+  }
+
+  return winOrLose;
+}
+
 const playBtn = document.querySelector(".play-btn");
 playBtn.addEventListener("click", (event) => {
   const computerSelection = gameValue[Math.floor(Math.random() * 3)];
@@ -56,42 +89,19 @@ playBtn.addEventListener("click", (event) => {
     computerContainer.classList.remove("hidden");
     console.log("playerImg  " + playerImg);
     console.log("computerImg  " + computerImg);
+
+    playBtn.classList.add("hidden");
+    const winOrLose = document.querySelector(".winner-display");
+    const winOrLoseText = document.querySelector(".winner-display  h2");
+
+    console.log("win or lose" + winOrLose);
+    console.log("win or lose h2" + winOrLoseText);
+
+    winOrLose.classList.remove("hidden");
+    winOrLoseText.textContent = playGame(computerSelection, playerSelection);
   });
 });
 // getComputerChoice dd
-
-// function to check who win the game
-function playGame(computerSelection, playerSelection) {
-  let winOrLose;
-
-  if (playerSelection === "scissors") {
-    if (computerSelection === "rock") {
-      winOrLose = "You lose";
-    } else if (computerSelection === "paper") {
-      winOrLose = "You win";
-    } else {
-      winOrLose = "draw";
-    }
-  } else if (playerSelection === "paper") {
-    if (computerSelection === "rock") {
-      winOrLose = "You win";
-    } else if (computerSelection === "scissors") {
-      winOrLose = "you lose";
-    } else {
-      winOrLose = "draw";
-    }
-  } else if (playerSelection === "rock") {
-    if (computerSelection === "paper") {
-      winOrLose = "you lose";
-    } else if (computerSelection === "scissors") {
-      winOrLose = "you win";
-    } else {
-      winOrLose = "draw";
-    }
-  }
-
-  return winOrLose;
-}
 
 // game() plays five times then display the winner
 function game() {
