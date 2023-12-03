@@ -58,11 +58,20 @@ html {
   padding: 2rem;
   border-radius: 1rem;
   font-size: 1.6rem;
-
+  font-weight: 700;
   color: rgb(0, 2, 142);
-  background-color: antiquewhite;
+  background-color: #faebd7;
   text-align: center;
   text-transform: capitalize;
+  /* color: rgb(231, 223, 1); */
+}
+
+.winner-display {
+  color: #000000;
+}
+
+.exit {
+  color: rgb(255, 0, 0);
 }
 
 .player-two-choice {

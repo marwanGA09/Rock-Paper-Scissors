@@ -58,6 +58,7 @@ function startingState() {
   winOrLose.classList.add("hidden");
   replayGame.classList.add("hidden");
   exitBtn.classList.add("exit");
+  winOrLose.setAttribute("style", "");
 }
 
 playBtn.addEventListener("click", (event) => {
@@ -115,6 +116,14 @@ playBtn.addEventListener("click", (event) => {
     replayGame.classList.remove("hidden");
     exitBtn.classList.remove("hidden");
     winOrLoseText.textContent = playGame(computerSelection, playerSelection);
+
+    if (winOrLoseText.textContent == "You Win") {
+      winOrLose.setAttribute("style", "background-color:rgb(0, 189, 0)");
+    } else if (winOrLoseText.textContent == "You Lose") {
+      winOrLose.setAttribute("style", "background-color: rgb(255, 0, 0)");
+    } else if (winOrLoseText.textContent == "Draw") {
+      winOrLose.setAttribute("style", "background-color:#ffff00");
+    }
 
     replayGame.addEventListener("click", () => {
       // remove any change
