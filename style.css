@@ -43,8 +43,16 @@ html {
 .player-one-choice {
 }
 
+.middle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
 .winner-display,
-.play-btn {
+.play-btn,
+.replay-btn,
+.exit {
   /* border: 0.2rem solid rgb(197, 52, 12); */
   width: 16rem;
   padding: 2rem;
@@ -54,6 +62,7 @@ html {
   color: rgb(0, 2, 142);
   background-color: antiquewhite;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .player-two-choice {

@@ -9,27 +9,27 @@ function playGame(computerSelection, playerSelection) {
 
   if (playerSelection === "scissors") {
     if (computerSelection === "rock") {
-      winOrLose = "You lose";
+      winOrLose = "You Lose";
     } else if (computerSelection === "paper") {
-      winOrLose = "You win";
+      winOrLose = "You Win";
     } else {
-      winOrLose = "draw";
+      winOrLose = "Draw";
     }
   } else if (playerSelection === "paper") {
     if (computerSelection === "rock") {
-      winOrLose = "You win";
+      winOrLose = "You Win";
     } else if (computerSelection === "scissors") {
-      winOrLose = "you lose";
+      winOrLose = "you Lose";
     } else {
-      winOrLose = "draw";
+      winOrLose = "Draw";
     }
   } else if (playerSelection === "rock") {
     if (computerSelection === "paper") {
-      winOrLose = "you lose";
+      winOrLose = "You Lose";
     } else if (computerSelection === "scissors") {
-      winOrLose = "you win";
+      winOrLose = "You Win";
     } else {
-      winOrLose = "draw";
+      winOrLose = "Draw";
     }
   }
 
@@ -37,11 +37,33 @@ function playGame(computerSelection, playerSelection) {
 }
 
 const playBtn = document.querySelector(".play-btn");
-playBtn.addEventListener("click", (event) => {
-  const computerSelection = gameValue[Math.floor(Math.random() * 3)];
-  event.target.textContent = `Select one from the left \n <==`;
+const playBtnText = document.querySelector(".play-btn h2");
+const playerOne = document.querySelector(".player-one");
 
-  const playerOne = document.querySelector(".player-one");
+const playerContainer = document.querySelector(".player-one-choice");
+const playerImg = document.querySelector(".player-one-choice img");
+const computerContainer = document.querySelector(".player-two-choice");
+const computerImg = document.querySelector(".player-two-choice img");
+
+const winOrLose = document.querySelector(".winner-display");
+const winOrLoseText = document.querySelector(".winner-display  h2");
+const replayGame = document.querySelector(".replay-btn");
+const exitBtn = document.querySelector(".exit");
+
+function startingState() {
+  playerContainer.classList.add("hidden");
+  computerContainer.classList.add("hidden");
+
+  playBtn.classList.remove("hidden");
+  winOrLose.classList.add("hidden");
+  replayGame.classList.add("hidden");
+  exitBtn.classList.add("exit");
+}
+
+playBtn.addEventListener("click", (event) => {
+  playBtn.textContent = `Select one from the left \n <==`;
+
+  const computerSelection = gameValue[Math.floor(Math.random() * 3)];
   let playerSelection;
   playerOne.addEventListener("click", (event) => {
     let card = event.target.getAttribute("id");
@@ -52,7 +74,7 @@ playBtn.addEventListener("click", (event) => {
     } else if (card == "scissors") {
       playerSelection = card;
     } else {
-      playBtn.textContent = "select one from the image";
+      playBtn.textContent = "Reselect one from the left image";
     }
 
     console.log("Card");
@@ -63,11 +85,6 @@ playBtn.addEventListener("click", (event) => {
     console.log(computerSelection);
     console.log("player selection");
     console.log(playerSelection);
-
-    const playerContainer = document.querySelector(".player-one-choice");
-    const playerImg = document.querySelector(".player-one-choice img");
-    const computerContainer = document.querySelector(".player-two-choice");
-    const computerImg = document.querySelector(".player-two-choice img");
 
     if (playerSelection == "rock") {
       playerImg.setAttribute("src", "./img/rock.jpg");
@@ -91,18 +108,26 @@ playBtn.addEventListener("click", (event) => {
     console.log("computerImg  " + computerImg);
 
     playBtn.classList.add("hidden");
-    const winOrLose = document.querySelector(".winner-display");
-    const winOrLoseText = document.querySelector(".winner-display  h2");
-
     console.log("win or lose" + winOrLose);
     console.log("win or lose h2" + winOrLoseText);
 
     winOrLose.classList.remove("hidden");
+    replayGame.classList.remove("hidden");
+    exitBtn.classList.remove("hidden");
     winOrLoseText.textContent = playGame(computerSelection, playerSelection);
+
+    replayGame.addEventListener("click", () => {
+      // remove any change
+      startingState();
+      // replay
+    });
   });
 });
 // getComputerChoice dd
 
+exitBtn.addEventListener("click", () => {
+  document.location.reload();
+});
 // game() plays five times then display the winner
 function game() {
   let count = 1;
