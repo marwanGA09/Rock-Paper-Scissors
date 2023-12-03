@@ -62,7 +62,7 @@ function startingState() {
 }
 
 playBtn.addEventListener("click", (event) => {
-  playBtn.textContent = `Select one from the left \n <==`;
+  playBtn.textContent = `Select one from the left \n <~~`;
 
   const computerSelection = gameValue[Math.floor(Math.random() * 3)];
   let playerSelection;
@@ -75,7 +75,7 @@ playBtn.addEventListener("click", (event) => {
     } else if (card == "scissors") {
       playerSelection = card;
     } else {
-      playBtn.textContent = "Reselect one from the left image";
+      playerSelection = gameValue[Math.floor(Math.random() * 3)];
     }
 
     console.log("Card");

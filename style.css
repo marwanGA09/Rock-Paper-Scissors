@@ -66,6 +66,11 @@ html {
   /* color: rgb(231, 223, 1); */
 }
 
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .winner-display {
   color: #000000;
 }
