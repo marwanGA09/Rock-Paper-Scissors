@@ -62,17 +62,13 @@ function startingState() {
 
 playBtn.addEventListener("click", (event) => {
   playBtn.textContent = `Select one from the left \n <~~`;
-  const computerSelection = gameValue[Math.floor(Math.random() * 3)];
-  let playerSelection;
 
   playerOne.addEventListener("click", (event) => {
+    let computerSelection = gameValue[Math.floor(Math.random() * 3)];
+    let playerSelection;
     let card = event.target.getAttribute("id");
 
-    if (card == "rock") {
-      playerSelection = card;
-    } else if (card == "paper") {
-      playerSelection = card;
-    } else if (card == "scissors") {
+    if (card == "rock" || card == "paper" || card == "scissors") {
       playerSelection = card;
     } else {
       playerSelection = gameValue[Math.floor(Math.random() * 3)];
@@ -100,21 +96,21 @@ playBtn.addEventListener("click", (event) => {
     winOrLose.classList.remove("hidden");
     replayGame.classList.remove("hidden");
     exitBtn.classList.remove("hidden");
+    let result = playGame(computerSelection, playerSelection);
+    winOrLoseText.textContent = result;
 
-    winOrLoseText.textContent = playGame(computerSelection, playerSelection);
-
-    if (winOrLoseText.textContent == "You Win") {
+    if (result == "You Win") {
       winOrLose.setAttribute("style", "background-color:rgb(0, 189, 0)");
-    } else if (winOrLoseText.textContent == "You Lose") {
+    } else if (result == "You Lose") {
       winOrLose.setAttribute("style", "background-color: rgb(255, 0, 0)");
-    } else if (winOrLoseText.textContent == "Draw") {
+    } else if (result == "Draw") {
       winOrLose.setAttribute("style", "background-color:#ffff00");
     }
-
-    replayGame.addEventListener("click", () => {
-      startingState();
-    });
   });
+});
+
+replayGame.addEventListener("click", () => {
+  startingState();
 });
 
 exitBtn.addEventListener("click", () => {
