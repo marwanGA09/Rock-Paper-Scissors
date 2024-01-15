@@ -127,8 +127,6 @@ playBtn.addEventListener("click", (event) => {
         midSpan.textContent = "Sorry You Lose The Game";
       }
       oneCount = twoCount = 0;
-
-      replayGame.classList.remove("hidden");
     }
   });
 });

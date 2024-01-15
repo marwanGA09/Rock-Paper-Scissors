@@ -42,6 +42,7 @@ body {
 }
 
 .middle-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -68,7 +69,17 @@ button:hover {
 }
 
 .winner-display {
+  position: absolute;
+  top: -15rem;
+  right: 50%;
+  transform: translateX(50%);
+  width: 30rem;
   color: #000000;
+  font-size: 2.5rem;
+  font-family: monospace;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .exit {
