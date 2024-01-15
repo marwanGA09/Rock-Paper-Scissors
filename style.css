@@ -113,3 +113,12 @@ img {
 .hidden {
   display: none;
 }
+
+.player-one h3,
+.player-one img {
+  box-shadow: 2px 2px 8px 4px rgb(233, 132, 0);
+}
+.player-two h3,
+.player-two img {
+  box-shadow: 2px 2px 8px 4px rgb(40, 34, 25);
+}
