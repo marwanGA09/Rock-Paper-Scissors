@@ -51,18 +51,8 @@ const playerTwoCount = document.querySelector(".p-two");
 const midSpan = document.querySelector(".mid-span");
 let oneCount = 0,
   twoCount = 0;
-const replayGame = document.querySelector(".replay-btn");
-const exitBtn = document.querySelector(".exit");
 
-function startingState() {
-  playerContainer.classList.add("hidden");
-  computerContainer.classList.add("hidden");
-  playBtn.classList.remove("hidden");
-  winOrLose.classList.add("hidden");
-  replayGame.classList.add("hidden");
-  exitBtn.classList.add("exit");
-  winOrLose.setAttribute("style", "");
-}
+const exitBtn = document.querySelector(".exit");
 
 playBtn.addEventListener("click", (event) => {
   playBtn.textContent = `Select one from the left \n <~~`;
@@ -108,13 +98,13 @@ playBtn.addEventListener("click", (event) => {
     // playerOneCount.textContent = result;
 
     if (result == "You Win") {
-      winOrLose.setAttribute("style", "background-color:rgb(0, 189, 0)");
+      winOrLose.setAttribute("style", "background-color:rgb(66, 178, 66,0.8)");
       oneCount += 1;
     } else if (result == "You Lose") {
-      winOrLose.setAttribute("style", "background-color: rgb(255, 0, 0)");
+      winOrLose.setAttribute("style", "background-color:  rgb(243, 59, 59,.8)");
       twoCount += 1;
     } else if (result == "Draw") {
-      winOrLose.setAttribute("style", "background-color:#ffff00");
+      winOrLose.setAttribute("style", "background-color:rgb(237, 237, 51,.8)");
     }
 
     playerOneCount.textContent = oneCount;
@@ -129,10 +119,6 @@ playBtn.addEventListener("click", (event) => {
       oneCount = twoCount = 0;
     }
   });
-});
-
-replayGame.addEventListener("click", () => {
-  startingState();
 });
 
 exitBtn.addEventListener("click", () => {
